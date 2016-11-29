@@ -1,0 +1,457 @@
+---
+output: 
+  html_document: 
+    toc: yes
+    toc_depth: 2
+---
+## 安慧妍
+### 介绍
+作者：安慧妍
+
+小游戏：上一世，你是怎么死的
+
+不要以为转世了，前一世的记忆就被抹的干干净净，重大的事情被我们以一种隐秘的方式记录下来，等待你去发现。想不想知道上一世你是怎么死的，这一世该如果避免在同一件事上再跌倒？立即开始游戏。
+
+游戏规则：输入 8 位数字出生年月日，立即解密。PS：出生日期带有强大而神秘的能量，请在心中虔诚默念“信刚哥，不挂科”
+
+### 代码
+```{r}
+discover <- function(x) {
+  # これは魔法の関数です（这是魔法之函数）
+  yushu <- x %% 10    # 余数
+  switch(yushu,
+    "1"="上一世你是夏禹时代的奴隶主，死于奴隶暴动",
+    "2"="上一世的你是汉代君侯夫人，颇为富裕，后因食入被寄生虫污染的河鲜去世",
+    "3"="你效仿神农尝百草，然后……你知道的。补偿你一下，这辈子还让你当个中医",
+    "4"="判官：找不到哇。哦，你没有前世",
+    "5"="上一世的你是著名的苦吟诗人，在骑驴思考诗句时冲撞了皇帝陛下的仪仗队，被当作刺客干掉了",
+    "6"="唉！人生在世不称意，不如自挂东南枝。",
+    "7"="春眠不觉晓，处处蚊子咬，传染你乙脑",
+    "8"="当余之从师也，负箧曳屣，行深山巨谷中，穷冬烈风，大雪深数尺，四肢僵劲不能动，卒。",
+    "9"="登高台 纵烟雨迷蒙不见故人来，留得冰冷残躯入君怀。",
+    "0"="渔阳鼙鼓动地来，惊破霓裳羽衣曲。六军不发无奈何，婉转蛾眉马前死。")
+}
+```
+
+### 演示
+```{r}
+discover(19910121)
+```
+
+## 蔡豫
+### 介绍
+作者：蔡豫
+
+### 代码
+```{r}
+ee <- function(x) {   # 该条语句是命名一个已 ee 为名的猜正反游戏，1 为正，0 为反。
+  # 该条语句是求一个命为 s 的二向分布，只会得出 0 与 1 ，且几率相等。
+  s <- rbinom(1, 1, .5)
+  # 当所猜 x > s 时，提示猜高了，x < s 时提示猜低了，均是错误的结果。只有机不高又不低的相等才代表猜对了，并以 Bingo! 来提示。
+  if (x > s)
+    "High!"
+  else if (x < s)
+    "Low!"
+  else
+    " Bingo! " 
+}
+```
+
+### 演示
+```{r}
+# 当x为1猜正时，得出高了，表明结果为0。代表反，提示猜错了。
+# 当x为1猜正时，得出相等，表明结果为1。代表正，提示猜对了。
+# 当x为0猜负时，得出相等，表明结果为0。代表负，提示猜对了。
+# 当x为0猜负时，得出低了，表明结果为1。代表正，提示猜错了。
+ee(1)
+ee(1) 
+ee(0)
+ee(0)
+```
+
+## 曹泽明
+### 介绍
+作者：曹泽明
+
+Good Job Game
+
+It's a game to guess the setted number. you are allow to print natural number between 1 and 9, if you choose the right number you will see "good job", otherwise you are going to guess the number expect had been guessed.
+
+### 代码
+```{r}
+goodjob <- function(x) {
+  switch(x,
+         "1"="please print the number between 1~9 again",
+         "2"="don't lose heart try again",
+         "3"="good job!",
+         "4"="you're close to the right number",
+         "5"="don't lose heart, try again",
+         "6"="sorry, it's the wrong number",
+         "7"="please print the number between 1~9 again",
+         "8"="sorry, it's the wrong number",
+         "9"="try again, you will get the right number")
+}
+```
+
+### 演示
+```{r}
+goodjob(4)
+goodjob(2)
+goodjob(8)
+goodjob(3)
+```
+
+## 郭靓
+### 介绍
+作者：郭靓
+
+方差的具体运算
+
+### 代码
+```{r}
+p <- function(data) {      # 为 p 设定功能
+  # n 为项数，求项数 n，也就是求这组数据的长度
+  n <- length(data)
+  # mean为求平均值的函数，sum 为求和的函数，该式为求平均值
+  mean <- sum(data) / n
+  # 该式为求方差的函数，data为这组数据的每个数值，mean为平均值
+  var <- sum((data - mean)^2) / n
+  # 返回 var 值
+  return(var)
+}
+```
+
+### 演示
+```{r}
+x <- c(63,69,71,60,73.68,57)  # 为 x 赋值
+p(x)      # 求功能 p 的结果
+```
+
+## 胡烨胤
+### 介绍
+作者：胡烨胤
+
+### 代码
+```{r}
+guess <- function() {
+  # Guess game: guess a number between 1 and 1000
+  
+  # generate random number between 1 and 1000
+  num <- as.integer(runif(1, 1, 1000))
+  # save guess history
+  guess.log <- c()
+  # input the number
+  guess.input <- function() {
+    guess.num <- suppressWarnings(
+      as.integer(readline("guess an integer: "))
+      )
+    # check the input 
+    while (is.na(guess.num) | guess.num < 1 | guess.num > 1000) {
+      cat("Input Error\n", 
+          "Please input an integer between 1 to 1000!\n\n")
+      guess.num <- suppressWarnings(
+        as.integer(readline("Guess an integer: "))
+        )
+    }
+    return(guess.num)
+  }
+  
+  # Start game information
+  cat("Guess Game\n\n")
+  cat("Guess an integer from 1 to 1000.\n\n")
+  
+  # guessing...
+  guess.num <- guess.input()
+  # log the guess number
+  guess.log <- c(guess.log, guess.num)
+  
+  while (guess.num != num) {
+    # do not get the right number
+    if (guess.num < num) {
+      cat("Too Small !")
+    } else {
+      cat("Too large !")
+    }
+    guess.num <- guess.input()
+    guess.log <- c(guess.log, guess.num)
+  }
+  
+  # get the right number !
+  cat("Bingo ! You got the number", num, "in", length(guess.log), "time(s) !")
+  # plot the guess log
+  plot(guess.log, main = "Guess log", type = "b", 
+       ylim = c(1, 1000), ylab = "number")
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 金悦
+### 介绍
+作者：金悦
+
+### 代码
+```{r}
+Sunshine <- function(x) {                  
+  # Sunshine 为此函数名称，X 为函数中涉及到的参数
+  
+  # 给出一个范围 1 到 20，而 s 取 20 中的任何一个
+  s <- sample(1:20,1)
+  # 用 x 进行一系列计算
+  m <- (x/5+3)*6-x*5+x^sqrt(1/3)
+  
+  if (m > s)
+    # 如果计算结果大于 S，则输出“你得到了阳光！”
+    "your get sunshine !"
+  else if (m < s)
+    # 如果计算结果小于 S，则输出“你陷入了黑暗！”
+    "your fall into the dark !"
+  else  
+    "your get the brdige!"
+}
+# 如果计算在s的范围内，则显示“你得到了一座桥”
+```
+
+### 演示
+```{r}
+Sunshine(4)
+Sunshine(0)
+```
+
+## 李梦乾
+### 介绍
+作者：李梦乾
+
+投掷骰子游戏，首先一个人将两个骰子随机抛掷第一次，如果出现点数和为 5 或者 11，则赢得游戏，游戏结束。如果没有出现 5 或 11，那么继续抛掷，如果点数与第一次抛的点数一样大，则赢得游戏，游戏结束，如果点数为 5 或 11 则输掉游戏，游戏结束。如果出现其他情况，则继续抛掷，直到游戏结束为止。
+
+### 代码
+```{r}
+craps <- function() {
+  # returns TRUE if you win, FALSE otherwise
+  initial.roll <- sum(sample(1:6, 2, replace = T))
+  if (initial.roll == 5 || initial.roll == 11)
+    return(TRUE)
+  while (TRUE) {
+    current.roll <- sum(sample(1:6, 2, replace = T))
+    if (current.roll == 5 || current.roll == 11) {
+      return(FALSE)
+    } else if (current.roll == initial.roll) {
+      return(TRUE)
+    }
+  }
+}
+```
+
+### 演示
+```{r}
+mean(replicate(1000, craps()))
+```
+
+## 李明玥
+### 介绍
+作者：李明玥
+
+### 代码
+```{r}
+numflowers <- function(x) {
+  # numflowers: 为玫瑰花的个数赋予意义
+  
+  switch(toString(x),
+  # tostring: 将输入的x变为字符串
+          "1"=" only you ",
+          "2"=" just us ",
+          "7"=" love quietly",
+          "9"=" always ",
+          "1314"=" love you forever ",
+          "10"=" perfect love",
+          " I love you ")
+  # 分别对1,2,7,9,1314,10赋值，输入其余的均输出”I love you”
+} 
+```
+
+### 演示
+```{r}
+numflowers(1)
+numflowers(1314)
+numflowers(99)
+```
+
+## 李钰昕
+### 介绍
+作者：李钰昕
+
+### 代码
+```{r}
+Drink <- function(x1, x2) {
+  s1 <- 7
+  s2 <- 8
+  s3 <- 9
+  x <- x1 + x2
+  if(x < s1)
+    "you are lucky! You needn’t do anything!"
+  else if(x < s2)
+    "Add some wine in the cup as you like please!"
+  else if(x < s3)
+    "Drink half wine in the cup please!"
+  else
+    "Drink all wine in the cup please!"
+}
+```
+
+### 演示
+```{r}
+x1 <- c(1:6)
+x2 <- c(1:6)
+Drink(1,2)
+Drink(3,4)
+Drink(3,5)
+Drink(4,5)
+Drink(2,6)
+Drink(4,6)
+Drink(1,4)
+```
+
+## 罗钰鑫
+### 介绍
+作者：罗钰鑫
+
+### 代码
+```{r}
+NBAnumbers <- function(x) {
+  switch(x,
+         "1"=" Tracy McGrady   team: Houston Rockets",
+         "2"=" Kyrie Irving   team: Cleveland Cavaliers",
+         "3"="Dwyane Wade   team: Miami Heat",
+         "5"="Kevin Garnett   team: Boston Celtics",
+         "6"="LeBron James    team: Miami Heat ",
+         "7"="Carmelo Anthony   team: New York Knicks",
+         "11"="Yao Ming    team: Houston Rockets ",
+         "12"="Dwight Howard   team: Houston Rockets ",
+         "13"="Steve Nash    team: Phoenix Suns",
+         "23"="Michal Jordan    team: Chicago Bulls ",
+         "24"="Kobe Bryan    team :L . A .Lakers",
+         "32"="Shaquile Rashaun O’Neal    team: L . A .Lakers ",
+         "91"="Dennis Rodman    team: Chicago Bulls ",
+         "33"="Larry Bird    team: Boston Celtics ")
+}
+```
+
+### 演示
+```{r}
+NBAnumbers(1)
+NBAnumbers(7)
+NBAnumbers(23)
+```
+
+## 邱林景
+### 介绍
+作者：邱林景
+
+### 代码
+```{r}
+RPS <- function(x) {
+  s <- sample(1:3, 1)
+  if (x > s)
+    "rock"
+  else if (x < s)
+    "paper"
+  else
+    " scissors "
+  }
+```
+
+### 演示
+```{r}
+RPS(1)
+RPS(1)
+RPS(2)
+RPS(3)
+```
+
+## 谢佳烨
+### 介绍
+作者：谢佳烨
+
+### 代码
+```{r}
+BMI <- function(a, b) {
+  bmi <- a / b ^ 2
+  if (bmi < 18.5)
+    "Underweight"
+  if (bmi > 25)
+    "Overweight"
+  else
+    "Normal weight"
+  }
+```
+
+### 演示
+```{r}
+BMI(170, 50)
+```
+
+## 张夏天
+### 介绍
+作者：张夏天
+
+### 代码
+```{r}
+compute <- function(x) {
+  # 定义函数
+  
+  # 为 a 赋值用户输入的 x
+  a <- x
+  # 为 b 赋值转为数字的 a
+  b <- as.numeric(a)
+  # 抽样
+  c <- sample(1:9, 1)
+  d <- sample(1:9, 1)
+  # paste 联合字符与数字；readline 令用户输入数据实现互动；
+  # as.numeric 将用户输入字符转化为数字；最后赋值于 key
+  (key <- as.numeric(readline(paste (b, "*", c, "*", d, "=?答案:"))))
+  # 条件语句，判断 key 是否与真实值相等
+  if (key == b * c * d) {
+    # key 与真实值相等结果
+    "对"
+  } else {
+    # 当 key 与真实值不相等结果
+    # key 与真实值不相等结果；paste 联合字符与数字
+    paste ("错,是", b * c * d)
+  }
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 周红梅
+### 介绍
+作者：周红梅
+
+Luck game
+
+### 代码
+```{r}
+luck <- function(x) {
+  # select a number between 1 and 100
+  s <- sample(1:100, 1)
+  if (x > s)
+    "drink whole wine"
+  else if (x < s)
+    "drink one half"
+  else
+    "luck"
+  }
+```
+
+### 演示
+```{r}
+luck(55)
+luck(1)
+luck(99)
+```

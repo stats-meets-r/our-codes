@@ -1,0 +1,40 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：张夏天
+
+### 代码
+```{r}
+compute <- function(x) {
+  # 定义函数
+  
+  # 为 a 赋值用户输入的 x
+  a <- x
+  # 为 b 赋值转为数字的 a
+  b <- as.numeric(a)
+  # 抽样
+  c <- sample(1:9, 1)
+  d <- sample(1:9, 1)
+  # paste 联合字符与数字；readline 令用户输入数据实现互动；
+  # as.numeric 将用户输入字符转化为数字；最后赋值于 key
+  (key <- as.numeric(readline(paste (b, "*", c, "*", d, "=?答案:"))))
+  # 条件语句，判断 key 是否与真实值相等
+  if (key == b * c * d) {
+    # key 与真实值相等结果
+    "对"
+  } else {
+    # 当 key 与真实值不相等结果
+    # key 与真实值不相等结果；paste 联合字符与数字
+    paste ("错,是", b * c * d)
+  }
+}
+```
+
+### 演示
+```{r}
+
+```
+

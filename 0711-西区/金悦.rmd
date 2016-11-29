@@ -1,0 +1,36 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：金悦
+
+### 代码
+```{r}
+Sunshine <- function(x) {                  
+  # Sunshine 为此函数名称，X 为函数中涉及到的参数
+  
+  # 给出一个范围 1 到 20，而 s 取 20 中的任何一个
+  s <- sample(1:20,1)
+  # 用 x 进行一系列计算
+  m <- (x/5+3)*6-x*5+x^sqrt(1/3)
+  
+  if (m > s)
+    # 如果计算结果大于 S，则输出“你得到了阳光！”
+    "your get sunshine !"
+  else if (m < s)
+    # 如果计算结果小于 S，则输出“你陷入了黑暗！”
+    "your fall into the dark !"
+  else  
+    "your get the brdige!"
+}
+# 如果计算在s的范围内，则显示“你得到了一座桥”
+```
+
+### 演示
+```{r}
+Sunshine(4)
+Sunshine(0)
+```
+

@@ -1,0 +1,39 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：李钰昕
+
+### 代码
+```{r}
+Drink <- function(x1, x2) {
+  s1 <- 7
+  s2 <- 8
+  s3 <- 9
+  x <- x1 + x2
+  if(x < s1)
+    "you are lucky! You needn’t do anything!"
+  else if(x < s2)
+    "Add some wine in the cup as you like please!"
+  else if(x < s3)
+    "Drink half wine in the cup please!"
+  else
+    "Drink all wine in the cup please!"
+}
+```
+
+### 演示
+```{r}
+x1 <- c(1:6)
+x2 <- c(1:6)
+Drink(1,2)
+Drink(3,4)
+Drink(3,5)
+Drink(4,5)
+Drink(2,6)
+Drink(4,6)
+Drink(1,4)
+```
+

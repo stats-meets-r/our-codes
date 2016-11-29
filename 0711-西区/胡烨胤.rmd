@@ -1,0 +1,66 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：胡烨胤
+
+### 代码
+```{r}
+guess <- function() {
+  # Guess game: guess a number between 1 and 1000
+  
+  # generate random number between 1 and 1000
+  num <- as.integer(runif(1, 1, 1000))
+  # save guess history
+  guess.log <- c()
+  # input the number
+  guess.input <- function() {
+    guess.num <- suppressWarnings(
+      as.integer(readline("guess an integer: "))
+      )
+    # check the input 
+    while (is.na(guess.num) | guess.num < 1 | guess.num > 1000) {
+      cat("Input Error\n", 
+          "Please input an integer between 1 to 1000!\n\n")
+      guess.num <- suppressWarnings(
+        as.integer(readline("Guess an integer: "))
+        )
+    }
+    return(guess.num)
+  }
+  
+  # Start game information
+  cat("Guess Game\n\n")
+  cat("Guess an integer from 1 to 1000.\n\n")
+  
+  # guessing...
+  guess.num <- guess.input()
+  # log the guess number
+  guess.log <- c(guess.log, guess.num)
+  
+  while (guess.num != num) {
+    # do not get the right number
+    if (guess.num < num) {
+      cat("Too Small !")
+    } else {
+      cat("Too large !")
+    }
+    guess.num <- guess.input()
+    guess.log <- c(guess.log, guess.num)
+  }
+  
+  # get the right number !
+  cat("Bingo ! You got the number", num, "in", length(guess.log), "time(s) !")
+  # plot the guess log
+  plot(guess.log, main = "Guess log", type = "b", 
+       ylim = c(1, 1000), ylab = "number")
+}
+```
+
+### 演示
+```{r}
+
+```
+

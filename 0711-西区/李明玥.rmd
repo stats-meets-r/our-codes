@@ -1,0 +1,33 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：李明玥
+
+### 代码
+```{r}
+numflowers <- function(x) {
+  # numflowers: 为玫瑰花的个数赋予意义
+  
+  switch(toString(x),
+  # tostring: 将输入的x变为字符串
+          "1"=" only you ",
+          "2"=" just us ",
+          "7"=" love quietly",
+          "9"=" always ",
+          "1314"=" love you forever ",
+          "10"=" perfect love",
+          " I love you ")
+  # 分别对1,2,7,9,1314,10赋值，输入其余的均输出”I love you”
+} 
+```
+
+### 演示
+```{r}
+numflowers(1)
+numflowers(1314)
+numflowers(99)
+```
+

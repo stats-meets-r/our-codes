@@ -1,0 +1,33 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：李梦乾
+
+投掷骰子游戏，首先一个人将两个骰子随机抛掷第一次，如果出现点数和为 5 或者 11，则赢得游戏，游戏结束。如果没有出现 5 或 11，那么继续抛掷，如果点数与第一次抛的点数一样大，则赢得游戏，游戏结束，如果点数为 5 或 11 则输掉游戏，游戏结束。如果出现其他情况，则继续抛掷，直到游戏结束为止。
+
+### 代码
+```{r}
+craps <- function() {
+  # returns TRUE if you win, FALSE otherwise
+  initial.roll <- sum(sample(1:6, 2, replace = T))
+  if (initial.roll == 5 || initial.roll == 11)
+    return(TRUE)
+  while (TRUE) {
+    current.roll <- sum(sample(1:6, 2, replace = T))
+    if (current.roll == 5 || current.roll == 11) {
+      return(FALSE)
+    } else if (current.roll == initial.roll) {
+      return(TRUE)
+    }
+  }
+}
+```
+
+### 演示
+```{r}
+mean(replicate(1000, craps()))
+```
+

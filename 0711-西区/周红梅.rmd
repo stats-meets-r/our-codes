@@ -1,0 +1,30 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：周红梅
+
+Luck game
+
+### 代码
+```{r}
+luck <- function(x) {
+  # select a number between 1 and 100
+  s <- sample(1:100, 1)
+  if (x > s)
+    "drink whole wine"
+  else if (x < s)
+    "drink one half"
+  else
+    "luck"
+  }
+```
+
+### 演示
+```{r}
+luck(55)
+luck(1)
+luck(99)
+```

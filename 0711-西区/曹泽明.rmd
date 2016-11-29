@@ -1,0 +1,36 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：曹泽明
+
+Good Job Game
+
+It's a game to guess the setted number. you are allow to print natural number between 1 and 9, if you choose the right number you will see "good job", otherwise you are going to guess the number expect had been guessed.
+
+### 代码
+```{r}
+goodjob <- function(x) {
+  switch(x,
+         "1"="please print the number between 1~9 again",
+         "2"="don't lose heart try again",
+         "3"="good job!",
+         "4"="you're close to the right number",
+         "5"="don't lose heart, try again",
+         "6"="sorry, it's the wrong number",
+         "7"="please print the number between 1~9 again",
+         "8"="sorry, it's the wrong number",
+         "9"="try again, you will get the right number")
+}
+```
+
+### 演示
+```{r}
+goodjob(4)
+goodjob(2)
+goodjob(8)
+goodjob(3)
+```
+

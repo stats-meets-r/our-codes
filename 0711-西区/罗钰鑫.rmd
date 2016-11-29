@@ -1,0 +1,36 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：罗钰鑫
+
+### 代码
+```{r}
+NBAnumbers <- function(x) {
+  switch(x,
+         "1"=" Tracy McGrady   team: Houston Rockets",
+         "2"=" Kyrie Irving   team: Cleveland Cavaliers",
+         "3"="Dwyane Wade   team: Miami Heat",
+         "5"="Kevin Garnett   team: Boston Celtics",
+         "6"="LeBron James    team: Miami Heat ",
+         "7"="Carmelo Anthony   team: New York Knicks",
+         "11"="Yao Ming    team: Houston Rockets ",
+         "12"="Dwight Howard   team: Houston Rockets ",
+         "13"="Steve Nash    team: Phoenix Suns",
+         "23"="Michal Jordan    team: Chicago Bulls ",
+         "24"="Kobe Bryan    team :L . A .Lakers",
+         "32"="Shaquile Rashaun O’Neal    team: L . A .Lakers ",
+         "91"="Dennis Rodman    team: Chicago Bulls ",
+         "33"="Larry Bird    team: Boston Celtics ")
+}
+```
+
+### 演示
+```{r}
+NBAnumbers(1)
+NBAnumbers(7)
+NBAnumbers(23)
+```
+

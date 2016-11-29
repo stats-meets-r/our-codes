@@ -1,0 +1,30 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+作者：郭靓
+
+方差的具体运算
+
+### 代码
+```{r}
+p <- function(data) {      # 为 p 设定功能
+  # n 为项数，求项数 n，也就是求这组数据的长度
+  n <- length(data)
+  # mean为求平均值的函数，sum 为求和的函数，该式为求平均值
+  mean <- sum(data) / n
+  # 该式为求方差的函数，data为这组数据的每个数值，mean为平均值
+  var <- sum((data - mean)^2) / n
+  # 返回 var 值
+  return(var)
+}
+```
+
+### 演示
+```{r}
+x <- c(63,69,71,60,73.68,57)  # 为 x 赋值
+p(x)      # 求功能 p 的结果
+```
+
