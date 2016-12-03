@@ -17,7 +17,8 @@ title: 作业展示
 author: 当统计学遇到 R 语言
 # email: your-email@domain.com
 description: 当统计学遇到 R 语言课程中的学生程序作业展示
-baseurl: "/our-codes" # the subpath of your site, e.g. /blog
+repository: stats-meets-r/our-codes
+# baseurl: "/our-codes" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: stats-meets-r
