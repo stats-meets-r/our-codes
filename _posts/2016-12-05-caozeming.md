@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 猜数
+title: Don't lose heart, get the right number
 author: 曹泽明
 ---
 
