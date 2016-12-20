@@ -1,0 +1,26 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 代码
+```{r}
+schoolstudents <- function(x, y) {
+  # 建立一个功能函数
+  if (x > 100 & 100 > y)
+  # 条件语句 如果 x 大于 100 且 100 大于 y（x 为男生人数，y 为女生人数）
+  "it is proboble for boys to become gays"  # 第一个 if 语句的结果
+  else if (x > y)
+  # 如果第一个条件没满足，那转入第二个条件"
+  "it is cough to find a girlfriend"        # 第二个 if 语句的结果
+  else
+  # 前两个if都未满足转到最后一个if语句，且肯定会满足条件
+  "it is easy to find a girlfriend"         # 最后一个 if 语句的结果
+}                                           # 最后用花括号结束
+```
+
+### 演示
+```{r}
+
+```
+

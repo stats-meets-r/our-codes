@@ -1,0 +1,32 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+在 [-9, 9] 中任选两个数
+规定函数 nember
+若 a + b 和 a * b 都与已知不相等
+输出"错误"
+若两者都相等
+输出"正确"
+
+【填入的两个数字不论方向都正确】
+
+### 代码
+```{r}
+M <- sample(-9:9, 2)
+nember <- function(a, b) {
+  if (a + b > sum(M) | a + b < sum(M) | 
+      a * b > prod(M) | a * b < prod(M))
+    "wrong!"
+  else
+    "Bingo!"
+}
+```
+
+### 演示
+```{r}
+
+```
+

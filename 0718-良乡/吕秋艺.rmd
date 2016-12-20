@@ -1,0 +1,53 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+parameyer <- function(height, weight) {
+  height <- suppressWarnings(
+    as.double(readline("please input your height: ")))
+  weight <- suppressWarnings(
+    as.double(readline("please input your weight: ")))
+
+  bmi.output <- weight / (height ^ 2)
+  bmi <- weight / (height ^ 2) 
+  if (30 > bmi & bmi > 27)
+    cat("your bmi is", bmi.output,
+        "and your condition is mild obesity ")
+  else if (bmi == 27)
+    cat("your bmi is", bmi.output ,
+        "and your condition is mild obesity ")
+  else if (35 > bmi & bmi > 30)
+    cat("your bmi is", bmi.output,
+        "and your condition is moderate obesity ")
+  else if (bmi == 30)
+    cat("your bmi is", bmi.output,
+        "and your condition is moderate obesity ")
+  else if (bmi > 35)
+    cat("your bmi is", bmi.output ,
+        "and your condition is severe obesity ")
+  else if (bmi == 35)
+    cat("your bmi is", bmi.output ,
+        "and your condition is severe obesity ")
+  else if (bmi < 18.5)
+    cat("your bmi is", bmi.output ,
+        "and your condition is underweight ")
+  else if (27 > bmi & bmi > 24)
+    cat("your bmi is", bmi.output ,
+        "and your condition is overweight ")
+  else
+    cat("your bmi is", bmi.output,
+        "and your condition is health ")
+}
+```
+
+### 演示
+```{r}
+
+```
+

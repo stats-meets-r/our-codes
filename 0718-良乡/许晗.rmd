@@ -1,0 +1,25 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+truefalse1 <- function(y) {
+  s <- sample(6:9, 1)       # 从 6 到 9 之中选择一个数字
+  if (y > s)                # y 比 s 大
+    "false!"                # 错
+  else if (y < s)           # y 比 s 小
+    "false"                 # 错
+  else                      # 其他
+  "true"                    # 对
+}
+```
+
+### 演示
+```{r}
+truefalse1(6)
+```

@@ -1,0 +1,30 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+som <- function(x) {
+  # 定义功能
+  switch(x,                 # 对 X 进行赋值，定义
+  "1" = "sing",             # 1 代表 sing
+  "2" = "dance",            # 2 代表 dance
+  "3" = "taletelling",      # 3 代表讲故事
+  "4" = "pick one up",      # 4 代表 pick one up
+  "5" = "make a face",      # 5 代表 make a face
+  "6" = "drinking"          # 6 代表 drinking
+  )
+}
+```
+
+### 演示
+```{r}
+som(sample(1:6, 1)) # 从 1 到 6 中随机抽取一个数，运行程序
+som(sample(1:6, 1))
+som(sample(1:6, 1))
+```
+

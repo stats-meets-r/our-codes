@@ -1,0 +1,27 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+升级版 highlow
+
+### 代码
+```{r}
+highlow <- function(x, y) {
+  s <- sample(1:10, 1)
+  z <- (x + y)
+  if (z > s)
+    "High!"
+  else if (z < s)
+    "Low!"
+  else
+    "Bingo!"
+}
+```
+
+### 演示
+```{r}
+highlow(1, 5)
+```
+

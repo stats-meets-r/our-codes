@@ -1,0 +1,41 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+rainbow <- function(x) {
+  # 赋予 rainbow 一种功能
+  switch(x,       # x 输入数字时所出现的 rainbow 色
+  "1" = "red",
+  "2" = "orange",
+  "3" = "yellow",
+  "4" = "green",
+  "5" = "blue",
+  "6" = "indigo - blue",
+  "7" = "purple"
+  )
+}   # rainbow 有七种颜色故 1 到 7 的数字
+```
+```{r}
+M <- function(x) {
+  # 赋予 M 一种功能
+  s <- sample(1:10, 1)  # 从 1 到 10 中选择一个数字
+  if (x > 10)
+  "More!"       # 如果输入的 x 和选择的数字 s 之和大于 10 则为超过
+  else if (x < 10)
+  "Less!"       # 如果输入的 x 和选择的数字 s 之和小于 10 则为少于
+  else
+  "Equal!"      # 除以上两种条件之外当 x 和 s 之和为 10 时则恰好等于
+}
+```
+
+### 演示
+```{r}
+
+```
+

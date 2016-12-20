@@ -1,0 +1,40 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+game <- function(x) {
+  # 色子游戏开始，任意取一个数 x
+  s <- sample(1:6, 1)   # 从 1 至 6 中抽样，抽出一个数
+  m <- s / 3 - s * 2    # 对抽样的数进行四则运算
+  if (x > m)            # 当 x > m
+    "win!!"             # 获胜
+  else if (x < m)       # 当 x < m
+    "lose!!"            # 失败
+  else                  # 当 x = m
+    "draw!"             # 平局
+}
+```
+```{r}
+game <- function(x) {   # 转盘游戏
+  switch(x,             # 任意选取一个数
+    "A" = "Nothing",
+    "B" = "Reward,you have a chance to draw",
+    "C" = "Oh my god,the ultimate prize",
+    "D" = "Nothing,but you may want to sing",
+    "E" = "Let's dance together",
+    "Drinking!!!"
+  )
+}
+```
+
+### 演示
+```{r}
+
+```
+

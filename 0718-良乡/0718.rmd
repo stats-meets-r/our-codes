@@ -1,0 +1,379 @@
+---
+output: 
+  html_document: 
+    toc: yes
+    toc_depth: 2
+---
+## 董健藤
+### 代码
+```{r}
+schoolstudents <- function(x, y) {
+  # 建立一个功能函数
+  if (x > 100 & 100 > y)
+  # 条件语句 如果 x 大于 100 且 100 大于 y（x 为男生人数，y 为女生人数）
+  "it is proboble for boys to become gays"  # 第一个 if 语句的结果
+  else if (x > y)
+  # 如果第一个条件没满足，那转入第二个条件"
+  "it is cough to find a girlfriend"        # 第二个 if 语句的结果
+  else
+  # 前两个if都未满足转到最后一个if语句，且肯定会满足条件
+  "it is easy to find a girlfriend"         # 最后一个 if 语句的结果
+}                                           # 最后用花括号结束
+```
+
+### 演示
+```{r}
+
+```
+
+## 黄弘博
+### 介绍
+
+
+### 代码
+```{r}
+rainbow <- function(x) {
+  # 赋予 rainbow 一种功能
+  switch(x,       # x 输入数字时所出现的 rainbow 色
+  "1" = "red",
+  "2" = "orange",
+  "3" = "yellow",
+  "4" = "green",
+  "5" = "blue",
+  "6" = "indigo - blue",
+  "7" = "purple"
+  )
+}   # rainbow 有七种颜色故 1 到 7 的数字
+```
+```{r}
+M <- function(x) {
+  # 赋予 M 一种功能
+  s <- sample(1:10, 1)  # 从 1 到 10 中选择一个数字
+  if (x > 10)
+  "More!"       # 如果输入的 x 和选择的数字 s 之和大于 10 则为超过
+  else if (x < 10)
+  "Less!"       # 如果输入的 x 和选择的数字 s 之和小于 10 则为少于
+  else
+  "Equal!"      # 除以上两种条件之外当 x 和 s 之和为 10 时则恰好等于
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 黄丽阳
+### 介绍
+
+
+### 代码
+```{r}
+som <- function(x) {
+  # 定义功能
+  switch(x,                 # 对 X 进行赋值，定义
+  "1" = "sing",             # 1 代表 sing
+  "2" = "dance",            # 2 代表 dance
+  "3" = "taletelling",      # 3 代表讲故事
+  "4" = "pick one up",      # 4 代表 pick one up
+  "5" = "make a face",      # 5 代表 make a face
+  "6" = "drinking"          # 6 代表 drinking
+  )
+}
+```
+
+### 演示
+```{r}
+som(sample(1:6, 1)) # 从 1 到 6 中随机抽取一个数，运行程序
+som(sample(1:6, 1))
+som(sample(1:6, 1))
+```
+
+## 李倩儀
+### 介绍
+運程推測小游戏
+
+在 1 ~ 100 的數中,任選一個數字作為推測運程的方法
+
+运行结果:
+當選中 60 以下的數字時,則顯示"有不順心的事嗎?那就找朋友聊聊天吧!"
+當選中 60, 60 以上,70以下的數字时,則顯示"今天運程一般般,做好你自已會讓自已更開心哦~"
+當選中 70, 70 以上,80 以下的數字時,則顯示"今天會遇到需要自己解決的問題哦,加油!"
+當選中 80, 80 以上,90 以下的數字時, 則顯示"今天是個適宜做決定的日子哦"
+當選中 90, 90 以上,100 以下的數字時,則顯示 "快出門吧!會遇到幸運的事哦"
+當選中 100 時, 則顯示"運氣十足!!是個十分開心的日子哦!"
+
+### 代码
+```{r}
+score <- function(x) {
+  # 首先建立一個函数,其中 score 是函数名称，function 指明该对象为函数类型，x 为函数中涉及的参数，{}中的是函数的具体内容
+  
+  if (x > 60 & x < 70)
+  "今天運程一般般,做好你自已會讓自已更開心哦~"
+  # 如果 X 的值大於 60 或小於 70,則顯示今天運程一般般,做好你自已會讓自已更開心哦~
+  else if (x == 60)
+  "顯示今天運程一般般,做好你自已會讓自已更開心哦~"
+  # 同樣,如果 X 的值等於 60,也顯示今天運程一般般,做好你自已會讓自已更開心哦~
+  else if (x > 70 & x < 80)
+  "今天會遇到需要自己解決的問題哦,加油!"
+  # 另一種情況,如果 X 的數大於 70 或小於 80,則顯示今天會遇到需要自己解決的問題哦,加油!
+  else if (x == 70)
+  "今天會遇到需要自己解決的問題哦,加油"
+  # 如果 X 的值等於 70,也顯示今天會遇到需要自己解決的問題哦,加油!
+  else if (x == 80)
+  "今天是個適宜做決定的日子哦"
+  # 如果 X 的值等於 80,顯示今天是個適宜做決定的日子哦~
+  else if (x > 80 & x < 90)
+  "今天是個適宜做決定的日子哦~"
+  # 另一種情況,如果 X 的數大於 80 或小於 90,則顯示今天是個適宜做決定的日子哦~
+  else if (x == 90)
+  "快出門吧!會遇到幸運的事哦"
+  # 如果 X 的值等於 90,顯示快出門吧!會遇到幸運的事哦!)
+  else if (x > 90 & x < 100)
+  "快出門吧!會遇到幸運的事哦!"
+  # 另一種情況,如果 X 的數大於 90 或小於 100,則顯示快出門吧!會遇到幸運的事哦!
+  else if (x == 100)
+  "運氣十足!!是個十分開心的日子哦!"
+  # 如果 X 的值等於 100,顯示運氣十足!!是個十分開心的日子哦!
+  else
+  "有不順心的事嗎?那就找朋友聊聊天吧!"
+  # 否則顯示有不順心的事嗎?那就找朋友聊聊天吧!
+}
+```
+
+### 演示
+```{r}
+score <- function(x) {
+  if (x > 60 & x < 70)
+    "今天運程一般般,做好你自已會讓自已更開心哦~"
+  else if (x == 60)
+    "今天運程一般般,做好你自已會讓自已更開心哦~"
+  else if (x > 70 & x < 80)
+    "今天會遇到需要自己解決的問題哦,加油!"
+  else if (x == 70)
+    "今天會遇到需要自己解決的問題哦,加油"
+  else if (x == 80)
+    "今天是個適宜做決定的日子哦"
+  else if (x > 80 & x < 90)
+    "今天是個適宜做決定的日子哦~"
+  else if (x == 90)
+    "快出門吧!會遇到幸運的事哦"
+  else if (x > 90 & x < 100)
+    "快出門吧!會遇到幸運的事哦!"
+  else if (x == 100)
+    "運氣十足!!是個十分開心的日子哦!"
+  else
+    "有不順心的事嗎?那就找朋友聊聊天吧!"
+}
+```
+
+## 刘聪健
+### 介绍
+
+
+### 代码
+```{r}
+twentyone <- function(x) {  # 盗版 21 点
+  s <- sample(1:13, x)      # 从 1 到 13 自己随机决定取得个数
+  S = sum(s)                # 将这些随机取得的数加和
+  if (S < 22)               # 如果总和小于 22
+  print(S)                  # 输出总和
+  else                      # 如果大于等于 22
+  "boom"                    # 输出炸了
+}                           # 结束
+```
+
+### 演示
+```{r}
+twentyone(3)
+twentyone(8)
+```
+
+## 刘稼玺
+### 介绍
+在 [-9, 9] 中任选两个数
+规定函数 nember
+若 a + b 和 a * b 都与已知不相等
+输出"错误"
+若两者都相等
+输出"正确"
+
+【填入的两个数字不论方向都正确】
+
+### 代码
+```{r}
+M <- sample(-9:9, 2)
+nember <- function(a, b) {
+  if (a + b > sum(M) | a + b < sum(M) | 
+      a * b > prod(M) | a * b < prod(M))
+    "wrong!"
+  else
+    "Bingo!"
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 刘兴
+### 介绍
+升级版 highlow
+
+### 代码
+```{r}
+highlow <- function(x, y) {
+  s <- sample(1:10, 1)
+  z <- (x + y)
+  if (z > s)
+    "High!"
+  else if (z < s)
+    "Low!"
+  else
+    "Bingo!"
+}
+```
+
+### 演示
+```{r}
+highlow(1, 5)
+```
+
+## 娄翠迪
+### 介绍
+
+
+### 代码
+```{r}
+game <- function(x) {
+  # 色子游戏开始，任意取一个数 x
+  s <- sample(1:6, 1)   # 从 1 至 6 中抽样，抽出一个数
+  m <- s / 3 - s * 2    # 对抽样的数进行四则运算
+  if (x > m)            # 当 x > m
+    "win!!"             # 获胜
+  else if (x < m)       # 当 x < m
+    "lose!!"            # 失败
+  else                  # 当 x = m
+    "draw!"             # 平局
+}
+```
+```{r}
+game <- function(x) {   # 转盘游戏
+  switch(x,             # 任意选取一个数
+    "A" = "Nothing",
+    "B" = "Reward,you have a chance to draw",
+    "C" = "Oh my god,the ultimate prize",
+    "D" = "Nothing,but you may want to sing",
+    "E" = "Let's dance together",
+    "Drinking!!!"
+  )
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 吕秋艺
+### 介绍
+
+
+### 代码
+```{r}
+parameyer <- function(height, weight) {
+  height <- suppressWarnings(
+    as.double(readline("please input your height: ")))
+  weight <- suppressWarnings(
+    as.double(readline("please input your weight: ")))
+
+  bmi.output <- weight / (height ^ 2)
+  bmi <- weight / (height ^ 2) 
+  if (30 > bmi & bmi > 27)
+    cat("your bmi is", bmi.output,
+        "and your condition is mild obesity ")
+  else if (bmi == 27)
+    cat("your bmi is", bmi.output ,
+        "and your condition is mild obesity ")
+  else if (35 > bmi & bmi > 30)
+    cat("your bmi is", bmi.output,
+        "and your condition is moderate obesity ")
+  else if (bmi == 30)
+    cat("your bmi is", bmi.output,
+        "and your condition is moderate obesity ")
+  else if (bmi > 35)
+    cat("your bmi is", bmi.output ,
+        "and your condition is severe obesity ")
+  else if (bmi == 35)
+    cat("your bmi is", bmi.output ,
+        "and your condition is severe obesity ")
+  else if (bmi < 18.5)
+    cat("your bmi is", bmi.output ,
+        "and your condition is underweight ")
+  else if (27 > bmi & bmi > 24)
+    cat("your bmi is", bmi.output ,
+        "and your condition is overweight ")
+  else
+    cat("your bmi is", bmi.output,
+        "and your condition is health ")
+}
+```
+
+### 演示
+```{r}
+
+```
+
+## 王瑞婷
+### 介绍
+计算 BMI
+
+### 代码
+```{r}
+BMI <- function(x, y) {
+  # 输入体重，身高，其中x为体重，y为身高
+  s <- c(x / (y ^ 2))           # 计算出 BMI 值，并赋给 s
+  if (s >= 32)
+    "哎，就这样自暴自弃吧"      # 如果 BMI 值大于等于 32，则为非常肥胖
+  if (s < 32 & s >= 28)
+    "北鼻，要努力减肥哦！"      # 如果BMI值在28-32之间，则为肥胖
+  if (s < 28 & s >= 25)
+    "北鼻，要适当控制体重咯！"  # 如果 BMI 值在 25 - 28 之间，则为轻度肥胖
+  if (s < 25 & s >= 18.5)
+    "北鼻，你的身材太好了啊！"  # 如果 BMI 值在 18.5 - 25 之间，则为标准身材
+  if (s < 18.5)
+    "太瘦了也不好哦！"          # 如果 BMI 值在 18.5 以下，则为过轻
+}
+  # 可以将上程序积累的数据用下列程序绘制直方图
+hist(data1, xlab = "day", ylab = "BMI", freq = FALSE, cex.axis = 0.7, cex.lab = 0.7)
+curve(dnorm(x, mean(data1), sd(data1)), add = T, col = "blue", lwd = 2)
+# 组合起来可以作为简单的体重监控程序
+```
+
+### 演示
+```{r}
+
+```
+
+## 许晗
+### 介绍
+
+
+### 代码
+```{r}
+truefalse1 <- function(y) {
+  s <- sample(6:9, 1)       # 从 6 到 9 之中选择一个数字
+  if (y > s)                # y 比 s 大
+    "false!"                # 错
+  else if (y < s)           # y 比 s 小
+    "false"                 # 错
+  else                      # 其他
+  "true"                    # 对
+}
+```
+
+### 演示
+```{r}
+truefalse1(6)
+```

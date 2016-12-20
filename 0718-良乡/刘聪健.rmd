@@ -1,0 +1,26 @@
+---
+output:
+  word_document:
+    keep_md: yes
+---
+### 介绍
+
+
+### 代码
+```{r}
+twentyone <- function(x) {  # 盗版 21 点
+  s <- sample(1:13, x)      # 从 1 到 13 自己随机决定取得个数
+  S = sum(s)                # 将这些随机取得的数加和
+  if (S < 22)               # 如果总和小于 22
+  print(S)                  # 输出总和
+  else                      # 如果大于等于 22
+  "boom"                    # 输出炸了
+}                           # 结束
+```
+
+### 演示
+```{r}
+twentyone(3)
+twentyone(8)
+```
+
